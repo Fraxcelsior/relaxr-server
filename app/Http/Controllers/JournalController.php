@@ -12,30 +12,33 @@ class JournalController extends Controller
         return Journal::all();
     }
  
-    public function show($id)
+    public function show(Journal $journal)
     {
-        return Journal::find($id);
+        return $journal;
+        //Journal::find($id);
     }
 
     public function store(Request $request)
     {
-        return Journal::create($request->all());
+        Journal::create($request->all());
+        return response()->json($journal, 201);
+
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Journal $journal)
     {
-        $journal = Journal::findOrFail($id);
+        //$journal = Journal::findOrFail($id);
         $journal->update($request->all());
 
-        return $journal;
+        return response()->json($journal, 200);
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request, Journal $journal)
     {
-        $journal = Journal::findOrFail($id);
+        //$journal = Journal::findOrFail($id);
         $journal->delete();
 
-        return 204;
+        return response()->json(null, 204);
     }
 
 }

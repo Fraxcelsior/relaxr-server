@@ -4,10 +4,10 @@ use Illuminate\Http\Request;
 use App\JournalController;
 
 Route::get('journals', 'JournalController@index');
-Route::get('journals/{id}', 'JournalController@show');
+Route::get('journals/{journal}', 'JournalController@show');
 Route::post('journals', 'JournalController@store');
-Route::put('journals/{id}', 'JournalController@update');
-Route::delete('journals/{id}', 'JournalController@delete');
+Route::put('journals/{journal}', 'JournalController@update');
+Route::delete('journals/{journal}', 'JournalController@delete');
 
 /*
 |--------------------------------------------------------------------------
