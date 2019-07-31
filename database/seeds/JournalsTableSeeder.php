@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Journal;
 
 class JournalsTableSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class JournalsTableSeeder extends Seeder
      */
     public function run()
     {
-        Journal::truncacte();
+        Journal::truncate();
 
         $faker = \Faker\Factory::create();
 
