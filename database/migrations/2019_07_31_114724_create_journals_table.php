@@ -15,6 +15,7 @@ class CreateJournalsTable extends Migration
     {
         Schema::create('journals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->array('videos')
             $table->timestamps();
         });
     }
